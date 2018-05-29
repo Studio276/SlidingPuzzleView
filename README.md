@@ -13,7 +13,7 @@ Download
 --------
 Download via Gradle:
 ```groovy
-compile 'com.luxiliu:slidingpuzzleview:0.1.0'
+compile 'com.luxiliu:slidingpuzzleview:0.2.0'
 ```
 
 License
