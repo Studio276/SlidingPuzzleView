@@ -47,6 +47,12 @@ public class SlidingPuzzleView extends View implements GestureDetector.OnGesture
     private DragEvent mDragEvent;
     private Position mEmptyPosition;
 
+    private PuzzleStateListener mPuzzleStateListener;
+
+    public interface PuzzleStateListener {
+        void onPuzzleSolved();
+    }
+
     public SlidingPuzzleView(Context context) {
         this(context, null);
     }
@@ -59,6 +65,10 @@ public class SlidingPuzzleView extends View implements GestureDetector.OnGesture
         super(context, attrs, defStyleAttr);
 
         init(context, attrs);
+    }
+
+    public void setPuzzleStateListener(PuzzleStateListener puzzleStateListener) {
+        mPuzzleStateListener = puzzleStateListener;
     }
 
     @Override
@@ -367,6 +377,11 @@ public class SlidingPuzzleView extends View implements GestureDetector.OnGesture
 
             // Redraw after movement
             invalidate();
+
+            // Notify
+            if (isSolved() && mPuzzleStateListener != null) {
+                mPuzzleStateListener.onPuzzleSolved();
+            }
         }
     }
 

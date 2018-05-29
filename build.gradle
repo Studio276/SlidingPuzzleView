@@ -30,7 +30,7 @@ task clean(type: Delete) {
 // Define versions in a single place
 ext {
     major = 0
-    minor = 1
+    minor = 2
     patch = 0
 
     versionCode = major * 1000 + minor * 100 + patch
