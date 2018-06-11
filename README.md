@@ -1,3 +1,7 @@
+Deprecated
+=
+SlidingPuzzleView is deprecated. No more development will be taking place. Thanks for all your support!
+
 SlidingPuzzleView
 =======
 SlidingPuzzleView is a custom view for sliding puzzle games
